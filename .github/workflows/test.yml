@@ -1,0 +1,22 @@
+name: Just a test
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      PATH: /home/runner/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - run: |
+          pip3 install pipenv
+          pipenv install --dev
+          pipenv run pytest --version
+      - name: pytest
+        run: |
+          pipenv run pytest
