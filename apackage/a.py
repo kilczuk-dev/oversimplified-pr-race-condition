@@ -1,2 +1,2 @@
 class A:
-    value = 0
+    value = 1
