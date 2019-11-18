@@ -9,4 +9,4 @@ def my_class():
 
 
 def test_a_plus_b(my_class: MyClass):
-    assert my_class.member_a + my_class.member_b == 0
+    assert my_class.member_a + my_class.member_b == 1
