@@ -14,7 +14,7 @@ jobs:
         with:
           python-version: 3.7
       - run: |
-          pip3 install pipenv
+          pip install --upgrade pipenv
           pipenv install --dev
           pipenv run pytest --version
       - name: pytest
